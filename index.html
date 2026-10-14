@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Birthday</title>
+    <!-- Google Fonts & Font Awesome Icons -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&family=Sacramento&family=Libre+Barcode+128&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Canvas Confetti & html2canvas Library -->
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="grid-bg">
+
+    <!-- 1. LOCK SCREEN / PASSWORD -->
+    <div id="lockScreen" class="lock-overlay">
+        <div class="lock-card">
+            <div class="polaroid">
+                <img src="" alt="Foto Cover" id="lockImg">
+                <div class="polaroid-caption" id="lockCaptionText">For My Special One</div>
+            </div>
+            
+            <p class="lock-title">Masukkan PIN Rahasia</p>
+            <p class="lock-hint" id="lockHintText">(Hint: PIN rahasia kita)</p>
+            
+            <div class="pin-input-group">
+                <input type="password" id="pinInput" placeholder="Masukkan PIN..." maxlength="8" onkeydown="checkEnter(event)">
+                <button onclick="unlockApp()"><i class="fa-solid fa-key"></i> Buka</button>
+            </div>
+            <div id="errorMsg" class="error-msg">PIN Salah! Coba ingat-ingat lagi yuk</div>
+        </div>
+    </div>
+
+    <!-- MAIN CONTENT -->
+    <div id="mainApp" class="main-content">
+        
+        <!-- NAVBAR -->
+        <nav class="navbar">
+            <div class="nav-brand"><i class="fa-solid fa-heart pink-text"></i> <span id="navBrandText">HBD Love</span></div>
+            <div class="nav-links">
+                <a href="#ucapan"><i class="fa-solid fa-cake-candles"></i> Ucapan</a>
+                <a href="#gameSection"><i class="fa-solid fa-gamepad"></i> Cari Kata</a>
+                <a href="#ticketSection" id="navTicketLink" class="hidden"><i class="fa-solid fa-ticket"></i> E-Ticket</a>
+            </div>
+        </nav>
+
+        <div class="container">
+            
+            <!-- 2. UCAPAN SECTION -->
+            <section id="ucapan" class="card-section text-center">
+                <div class="badge-tag">Special Birthday Wish</div>
+                <h1 class="main-title" id="mainTitleText">Selamat Ulang Tahun!</h1>
+                
+                <div class="photo-frame-group">
+                    <div class="polaroid-small">
+                        <img src="" alt="Foto Utama" id="mainImg">
+                    </div>
+                </div>
+
+                <div class="letter-box">
+                    <p class="sacramento-text" id="greetingText">Dearest Love,</p>
+                    <p class="letter-text" id="letterTextParagraph1"></p>
+                    <p class="letter-text" id="letterTextParagraph2"></p>
+                    <button class="btn-primary" onclick="triggerConfetti()"><i class="fa-solid fa-sparkles"></i> Tiup Lilin & Rayakan!</button>
+                </div>
+            </section>
+
+            <!-- 3. WORD SEARCH GAME SECTION -->
+            <section id="gameSection" class="card-section">
+                <div class="badge-tag">Mini Game</div>
+                <h2 class="section-title text-center">Tantangan Cari Kata Romantis</h2>
+                <p class="text-center sub-text">Tahan & seret (drag/usap) huruf-huruf untuk menemukan kata tersembunyi!</p>
+
+                <div class="game-wrapper">
+                    <div class="word-list">
+                        <h4>Daftar Kata:</h4>
+                        <ul id="wordTargetList"></ul>
+                    </div>
+
+                    <div class="word-grid-container">
+                        <div id="wordGrid" class="word-grid"></div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 4. MODAL POP-UP AMPLOP & FORMULIR -->
+            <div id="envelopeModal" class="modal-overlay">
+                <div class="modal-content">
+                    <div id="envelopeWrapper" class="envelope-wrapper" onclick="openEnvelope()">
+                        <div class="envelope">
+                            <div class="front flap"></div>
+                            <div class="front pocket"></div>
+                            <div class="letter">
+                                <p class="letter-title">Selamat!</p>
+                                <p>Kamu berhasil menemukan semua kata!</p>
+                                <p><b>Klik lagi untuk buka formulir kencan</b></p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- FORMULIR KENCAN -->
+                    <div id="dateFormContainer" class="date-form-container hidden">
+                        <h3 class="pink-text text-center"><i class="fa-solid fa-heart-circle-plus"></i> Form Rencana Kencan Ultah</h3>
+                        <p class="text-center" style="font-size:0.85rem; color:#666; margin-bottom: 15px;">Yuk atur kencan spesial ultah kita berdua!</p>
+                        
+                        <form id="dateForm" onsubmit="generateTicket(event)">
+                            <div class="form-group">
+                                <label><i class="fa-solid fa-user"></i> Nama Tamu VIP:</label>
+                                <input type="text" id="nameInput" required>
+                            </div>
+
+                            <div class="form-group">
+                                <label><i class="fa-solid fa-calendar-day"></i> Pilih Tanggal Kencan:</label>
+                                <input type="date" id="dateInput" required>
+                            </div>
+
+                            <div class="form-group">
+                                <label><i class="fa-solid fa-utensils"></i> Mau Makan/Aktivitas Apa?</label>
+                                <input type="text" id="activityInput" placeholder="Contoh: Nonton Bioskop & Arcade" required>
+                            </div>
+
+                            <div class="form-group">
+                                <label><i class="fa-solid fa-gift"></i> Permintaan Hadiah Khusus / Catatan:</label>
+                                <input type="text" id="noteInput" placeholder="Contoh: apa ajaa deh" required>
+                            </div>
+
+                            <button type="submit" class="btn-primary full-width">Buat E-Ticket Kencan</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 5. E-TICKET RESULT SECTION -->
+            <section id="ticketSection" class="card-section hidden">
+                <div class="badge-tag">E-Ticket Ultah</div>
+                <h2 class="section-title text-center">Tiket Kencan Spesial Kita</h2>
+
+                <div id="ticketContainer" class="ticket-placeholder text-center"></div>
+            </section>
+
+        </div>
+
+        <footer class="text-center footer">
+            Made with <i class="fa-solid fa-heart pink-text"></i> for your special day.
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
