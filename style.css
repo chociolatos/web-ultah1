@@ -9,6 +9,7 @@
 body {
     color: #333;
     background-color: #ffffff;
+    overflow-x: hidden;
 }
 
 /* BACKGROUND GRID KOTAK-KOTAK PUTIH */
@@ -31,52 +32,53 @@ body {
     left: 0;
     width: 100vw;
     height: 100vh;
-    background: rgba(255, 240, 243, 0.95);
+    background: rgba(255, 240, 243, 0.98);
     display: flex;
     justify-content: center;
     align-items: center;
     z-index: 9999;
-    padding: 20px;
+    padding: 15px;
 }
 
 .lock-card {
     background: #fff;
-    padding: 30px;
+    padding: 25px 20px;
     border-radius: 20px;
     box-shadow: 0 10px 30px rgba(255, 77, 109, 0.2);
     border: 2px solid #ffb3c1;
     text-align: center;
-    max-width: 400px;
+    max-width: 380px;
     width: 100%;
 }
 
 .polaroid {
     background: white;
-    padding: 12px 12px 25px 12px;
+    padding: 10px 10px 20px 10px;
     box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-    transform: rotate(-3deg);
+    transform: rotate(-2deg);
     border: 1px solid #eee;
     margin-bottom: 20px;
 }
 
 .polaroid img {
     width: 100%;
-    height: 220px;
+    height: 200px;
     object-fit: cover;
     border-radius: 6px;
 }
 
 .polaroid-caption {
     font-family: 'Sacramento', cursive;
-    font-size: 1.6rem;
+    font-size: 1.5rem;
     color: #ff4d6d;
-    margin-top: 8px;
+    margin-top: 6px;
 }
 
 .lock-title {
     font-weight: 600;
     color: #ff4d6d;
     margin-bottom: 4px;
+    font-size: 1rem;
 }
 
 .lock-hint {
@@ -92,12 +94,12 @@ body {
 
 .pin-input-group input {
     flex: 1;
-    padding: 10px 15px;
+    padding: 10px 12px;
     border: 2px solid #ffccd5;
     border-radius: 10px;
     outline: none;
     text-align: center;
-    font-size: 1.1rem;
+    font-size: 1rem;
 }
 
 .pin-input-group input:focus {
@@ -108,7 +110,7 @@ body {
     background: #ff4d6d;
     color: white;
     border: none;
-    padding: 10px 18px;
+    padding: 10px 16px;
     border-radius: 10px;
     cursor: pointer;
     font-weight: 600;
@@ -132,12 +134,12 @@ body {
 }
 
 .navbar {
-    background: rgba(255, 255, 255, 0.9);
+    background: rgba(255, 255, 255, 0.95);
     backdrop-filter: blur(8px);
     position: sticky;
     top: 0;
     z-index: 100;
-    padding: 15px 30px;
+    padding: 12px 20px;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -146,15 +148,15 @@ body {
 
 .nav-brand {
     font-weight: 700;
-    font-size: 1.2rem;
+    font-size: 1.1rem;
     color: #ff4d6d;
 }
 
 .nav-links a {
     text-decoration: none;
     color: #555;
-    margin-left: 20px;
-    font-size: 0.9rem;
+    margin-left: 15px;
+    font-size: 0.85rem;
     font-weight: 600;
     transition: 0.2s;
 }
@@ -166,15 +168,15 @@ body {
 /* CONTAINER & CARD SECTIONS */
 .container {
     max-width: 800px;
-    margin: 30px auto;
-    padding: 0 20px;
+    margin: 20px auto;
+    padding: 0 15px;
 }
 
 .card-section {
     background: #ffffff;
     border-radius: 20px;
-    padding: 35px;
-    margin-bottom: 40px;
+    padding: 25px 20px;
+    margin-bottom: 30px;
     border: 2px solid #ffccd5;
     box-shadow: 0 8px 25px rgba(255, 182, 193, 0.2);
     position: relative;
@@ -183,11 +185,11 @@ body {
 .badge-tag {
     position: absolute;
     top: -12px;
-    left: 25px;
+    left: 20px;
     background: #ff4d6d;
     color: white;
-    font-size: 0.75rem;
-    padding: 4px 14px;
+    font-size: 0.7rem;
+    padding: 4px 12px;
     border-radius: 20px;
     font-weight: 600;
     text-transform: uppercase;
@@ -196,40 +198,41 @@ body {
 
 .main-title {
     color: #ff4d6d;
-    font-size: 1.8rem;
+    font-size: 1.5rem;
     margin-top: 5px;
-    margin-bottom: 20px;
+    margin-bottom: 15px;
 }
 
 .sacramento-text {
     font-family: 'Sacramento', cursive;
-    font-size: 2.2rem;
+    font-size: 2rem;
     color: #ff4d6d;
 }
 
 .letter-box {
     background: #fff0f3;
-    padding: 20px;
+    padding: 18px 15px;
     border-radius: 15px;
     border: 1px dashed #ffb3c1;
-    margin-top: 20px;
+    margin-top: 15px;
 }
 
 .letter-text {
     margin-top: 10px;
-    line-height: 1.7;
+    line-height: 1.6;
     color: #4a4a4a;
+    font-size: 0.9rem;
 }
 
 .photo-frame-group {
     display: flex;
     justify-content: center;
-    margin: 20px 0;
+    margin: 15px 0;
 }
 
 .polaroid-small img {
-    width: 200px;
-    height: 200px;
+    width: 180px;
+    height: 180px;
     object-fit: cover;
     border-radius: 10px;
     border: 4px solid white;
@@ -240,34 +243,34 @@ body {
     background: #ff4d6d;
     color: white;
     border: none;
-    padding: 12px 25px;
+    padding: 12px 20px;
     border-radius: 25px;
-    font-size: 0.95rem;
+    font-size: 0.9rem;
     font-weight: 600;
     cursor: pointer;
-    margin-top: 20px;
+    margin-top: 15px;
     transition: 0.3s;
     box-shadow: 0 4px 15px rgba(255, 77, 109, 0.3);
 }
 
 .btn-primary:hover {
     background: #c9184a;
-    transform: translateY(-2px);
 }
 
 .btn-whatsapp {
     background: #25d366;
     color: white;
     border: none;
-    padding: 12px 25px;
+    padding: 12px 20px;
     border-radius: 25px;
-    font-size: 0.95rem;
+    font-size: 0.9rem;
     font-weight: 600;
     cursor: pointer;
-    margin-top: 15px;
+    margin-top: 12px;
     transition: 0.3s;
     text-decoration: none;
     display: inline-block;
+    width: 100%;
 }
 
 .btn-whatsapp:hover {
@@ -282,41 +285,46 @@ body {
 
 /* WORD SEARCH GAME */
 .sub-text {
-    font-size: 0.85rem;
+    font-size: 0.8rem;
     color: #666;
-    margin-bottom: 20px;
+    margin-bottom: 15px;
 }
 
 .game-wrapper {
     display: flex;
-    flex-wrap: wrap;
-    gap: 20px;
-    justify-content: center;
+    flex-direction: column;
+    gap: 15px;
     align-items: center;
 }
 
 .word-list {
     background: #fff0f3;
-    padding: 15px;
-    border-radius: 15px;
-    min-width: 160px;
+    padding: 12px 15px;
+    border-radius: 12px;
+    width: 100%;
+    max-width: 340px;
     border: 1px solid #ffccd5;
+    text-align: center;
 }
 
 .word-list h4 {
     color: #ff4d6d;
-    margin-bottom: 10px;
+    margin-bottom: 8px;
+    font-size: 0.95rem;
 }
 
 .word-list ul {
     list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 8px 12px;
 }
 
 .word-list li {
     font-weight: 600;
-    margin: 8px 0;
     color: #666;
-    font-size: 0.9rem;
+    font-size: 0.8rem;
 }
 
 .word-list li.found {
@@ -324,12 +332,18 @@ body {
     text-decoration: line-through;
 }
 
+.word-grid-container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
 .word-grid {
     display: grid;
-    grid-template-columns: repeat(8, 38px);
-    grid-gap: 6px;
+    grid-template-columns: repeat(8, minmax(32px, 38px));
+    grid-gap: 5px;
     background: #fff0f3;
-    padding: 12px;
+    padding: 10px;
     border-radius: 15px;
     border: 2px solid #ffccd5;
     user-select: none;
@@ -337,14 +351,14 @@ body {
 }
 
 .grid-cell {
-    width: 38px;
-    height: 38px;
+    aspect-ratio: 1;
     background: white;
-    border-radius: 8px;
+    border-radius: 6px;
     display: flex;
     justify-content: center;
     align-items: center;
     font-weight: 700;
+    font-size: 0.85rem;
     color: #4a4a4a;
     cursor: pointer;
     border: 1px solid #ffccd5;
@@ -373,22 +387,24 @@ body {
     justify-content: center;
     align-items: center;
     z-index: 10000;
-    padding: 20px;
+    padding: 15px;
 }
 
 .modal-content {
     background: white;
-    padding: 30px;
+    padding: 20px;
     border-radius: 20px;
-    max-width: 480px;
+    max-width: 420px;
     width: 100%;
     position: relative;
     border: 2px solid #ff4d6d;
+    max-height: 90vh;
+    overflow-y: auto;
 }
 
 .envelope-wrapper {
     cursor: pointer;
-    height: 180px;
+    height: 160px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -396,8 +412,8 @@ body {
 
 .envelope {
     position: relative;
-    width: 220px;
-    height: 140px;
+    width: 200px;
+    height: 130px;
     background: #ff8fa3;
     border-radius: 0 0 10px 10px;
     box-shadow: 0 4px 10px rgba(0,0,0,0.15);
@@ -411,18 +427,18 @@ body {
 }
 
 .envelope .flap {
-    border-left: 110px solid transparent;
-    border-right: 110px solid transparent;
-    border-top: 80px solid #ff4d6d;
+    border-left: 100px solid transparent;
+    border-right: 100px solid transparent;
+    border-top: 75px solid #ff4d6d;
     top: 0;
     transform-origin: top;
     transition: transform 0.4s ease, z-index 0.2s;
 }
 
 .envelope .pocket {
-    border-left: 110px solid #ffa6c1;
-    border-right: 110px solid #ffa6c1;
-    border-bottom: 70px solid #ff8fa3;
+    border-left: 100px solid #ffa6c1;
+    border-right: 100px solid #ffa6c1;
+    border-bottom: 65px solid #ff8fa3;
     bottom: 0;
     border-radius: 0 0 10px 10px;
 }
@@ -430,14 +446,14 @@ body {
 .envelope .letter {
     position: absolute;
     background: white;
-    width: 190px;
-    height: 110px;
+    width: 170px;
+    height: 100px;
     top: 15px;
     left: 15px;
     border-radius: 6px;
-    padding: 10px;
+    padding: 8px;
     text-align: center;
-    font-size: 0.75rem;
+    font-size: 0.7rem;
     color: #333;
     transition: transform 0.4s ease;
     z-index: 2;
@@ -450,7 +466,7 @@ body {
 }
 
 .envelope-wrapper.open .letter {
-    transform: translateY(-60px);
+    transform: translateY(-50px);
     z-index: 3;
 }
 
@@ -458,25 +474,25 @@ body {
 .hidden { display: none !important; }
 
 .form-group {
-    margin-bottom: 15px;
+    margin-bottom: 12px;
     text-align: left;
 }
 
 .form-group label {
     display: block;
-    font-size: 0.85rem;
+    font-size: 0.8rem;
     font-weight: 600;
     color: #555;
-    margin-bottom: 5px;
+    margin-bottom: 4px;
 }
 
 .form-group input {
     width: 100%;
-    padding: 10px;
+    padding: 9px 12px;
     border: 1px solid #ffccd5;
     border-radius: 8px;
     outline: none;
-    font-size: 0.9rem;
+    font-size: 0.85rem;
 }
 
 /* E-TICKET CARD STYLES */
@@ -487,65 +503,64 @@ body {
     display: flex;
     flex-direction: column;
     overflow: hidden;
-    box-shadow: 0 10px 20px rgba(255, 77, 109, 0.15);
-    margin-top: 15px;
+    box-shadow: 0 8px 20px rgba(255, 77, 109, 0.15);
+    margin-top: 10px;
 }
 
 .ticket-header {
     background: #ff4d6d;
     color: white;
-    padding: 15px;
+    padding: 12px;
     font-weight: 700;
-    font-size: 1.1rem;
+    font-size: 1rem;
 }
 
 .ticket-body {
-    padding: 20px;
+    padding: 15px;
     text-align: left;
 }
 
 .ticket-row {
-    margin-bottom: 12px;
+    margin-bottom: 10px;
 }
 
 .ticket-label {
-    font-size: 0.75rem;
+    font-size: 0.7rem;
     color: #888;
     text-transform: uppercase;
     font-weight: 600;
 }
 
 .ticket-value {
-    font-size: 1rem;
+    font-size: 0.9rem;
     color: #333;
     font-weight: 600;
 }
 
 .ticket-footer {
     background: #fff0f3;
-    padding: 12px 15px;
+    padding: 10px 12px;
     border-top: 1px dashed #ffccd5;
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
 
-/* FOUNT BARCODE ASLI REALISTIK */
 .barcode {
     font-family: 'Libre Barcode 128', cursive;
-    font-size: 2.2rem;
+    font-size: 1.8rem;
     color: #333;
     letter-spacing: 2px;
     line-height: 1;
 }
 
 .footer {
-    padding: 20px;
-    font-size: 0.8rem;
+    padding: 20px 15px;
+    font-size: 0.75rem;
     color: #888;
 }
 
-/* CSS PRINT KHUSUS (HANYA MENCETAK KOTAK TIKET) */
+/* CSS PRINT KHUSUS */
 @media print {
     body * {
         visibility: hidden;
@@ -559,27 +574,32 @@ body {
         top: 0;
         width: 100%;
     }
-    /* Sembunyikan tombol cetak & WhatsApp saat proses cetak/simpan PDF */
     .btn-primary, .btn-whatsapp {
         display: none !important;
     }
 }
 
-/* RESPONSIVE DESIGN */
-@media (max-width: 600px) {
-    .word-grid {
-        grid-template-columns: repeat(8, 30px);
-        grid-gap: 4px;
-        padding: 8px;
+/* RESPONSIVE DESKTOP & TABLET ADJUSTMENT */
+@media (min-width: 600px) {
+    .game-wrapper {
+        flex-direction: row;
+        justify-content: center;
     }
     
-    .grid-cell {
-        width: 30px;
-        height: 30px;
-        font-size: 0.85rem;
+    .word-list {
+        width: 180px;
+        text-align: left;
+    }
+    
+    .word-list ul {
+        display: block;
     }
 
-    .nav-links {
-        display: none;
+    .word-list li {
+        margin: 6px 0;
+    }
+
+    .btn-whatsapp {
+        width: auto;
     }
 }
