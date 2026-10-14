@@ -25,7 +25,7 @@ body {
     color: #ff4d6d;
 }
 
-/* LOCK SCREEN */
+/* LOCK SCREEN (100% RESPONSIF HP & DESKTOP) */
 .lock-overlay {
     position: fixed;
     top: 0;
@@ -38,38 +38,46 @@ body {
     align-items: center;
     z-index: 9999;
     padding: 15px;
+    box-sizing: border-box;
+    overflow-y: auto;
 }
 
 .lock-card {
     background: #fff;
-    padding: 25px 20px;
+    padding: 20px 15px;
     border-radius: 20px;
     box-shadow: 0 10px 30px rgba(255, 77, 109, 0.2);
     border: 2px solid #ffb3c1;
     text-align: center;
-    max-width: 380px;
     width: 100%;
+    max-width: 340px;
+    box-sizing: border-box;
+    margin: auto;
 }
 
 .polaroid {
     background: white;
-    padding: 10px 10px 20px 10px;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    padding: 8px 8px 15px 8px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
     transform: rotate(-2deg);
     border: 1px solid #eee;
-    margin-bottom: 20px;
+    margin-bottom: 15px;
+    width: 100%;
+    box-sizing: border-box;
 }
 
 .polaroid img {
     width: 100%;
-    height: 200px;
+    height: auto;
+    max-height: 180px;
     object-fit: cover;
     border-radius: 6px;
+    display: block;
 }
 
 .polaroid-caption {
     font-family: 'Sacramento', cursive;
-    font-size: 1.5rem;
+    font-size: 1.4rem;
     color: #ff4d6d;
     margin-top: 6px;
 }
@@ -78,28 +86,32 @@ body {
     font-weight: 600;
     color: #ff4d6d;
     margin-bottom: 4px;
-    font-size: 1rem;
+    font-size: 0.9rem;
 }
 
 .lock-hint {
-    font-size: 0.8rem;
+    font-size: 0.75rem;
     color: #777;
-    margin-bottom: 15px;
+    margin-bottom: 12px;
 }
 
 .pin-input-group {
     display: flex;
     gap: 8px;
+    width: 100%;
+    box-sizing: border-box;
 }
 
 .pin-input-group input {
     flex: 1;
-    padding: 10px 12px;
+    min-width: 0;
+    padding: 10px 10px;
     border: 2px solid #ffccd5;
     border-radius: 10px;
     outline: none;
     text-align: center;
-    font-size: 1rem;
+    font-size: 0.9rem;
+    box-sizing: border-box;
 }
 
 .pin-input-group input:focus {
@@ -110,11 +122,14 @@ body {
     background: #ff4d6d;
     color: white;
     border: none;
-    padding: 10px 16px;
+    padding: 10px 14px;
     border-radius: 10px;
     cursor: pointer;
     font-weight: 600;
     transition: 0.2s;
+    font-size: 0.85rem;
+    white-space: nowrap;
+    flex-shrink: 0;
 }
 
 .pin-input-group button:hover {
@@ -123,8 +138,8 @@ body {
 
 .error-msg {
     color: #d90429;
-    font-size: 0.85rem;
-    margin-top: 10px;
+    font-size: 0.78rem;
+    margin-top: 8px;
     display: none;
 }
 
@@ -340,7 +355,7 @@ body {
 
 .word-grid {
     display: grid;
-    grid-template-columns: repeat(8, minmax(32px, 38px));
+    grid-template-columns: repeat(8, minmax(30px, 38px));
     grid-gap: 5px;
     background: #fff0f3;
     padding: 10px;
@@ -579,7 +594,7 @@ body {
     }
 }
 
-/* RESPONSIVE DESKTOP & TABLET ADJUSTMENT */
+/* DESKTOP ADJUSTMENT */
 @media (min-width: 600px) {
     .game-wrapper {
         flex-direction: row;
