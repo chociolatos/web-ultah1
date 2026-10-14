@@ -2,8 +2,8 @@
 // ⚙️ SEKSI KONFIGURASI APLIKASI
 // ================================================================
 const CONFIG = {
-    pin: "1234",
-    lockHint: "(Hint: Tanggal Ulang Tahun / PIN: 1234)",
+    pin: "130908",
+    lockHint: "(Hint: Tanggal Ulang Tahun / PIN: 130908)",
     lockCaption: "For My Birthday Girl",
 
     lockPhotoUrl: "https://images.unsplash.com/photo-1517841905240-472988babdf9?w=500",
